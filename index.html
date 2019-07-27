@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <link href='./style.css' rel='stylesheet' /> -->
+    <style>
+    .peices{
+      width: 1rem;
+      height: 1rem;
+      border: solid 1px black;
+    }
+    </style>
+  </head>
+  <body>
+    <div id='blocks'>
+    </div>
+    <!-- <link href='./stript.js' rel='stylesheet' /> -->
+
+  </body>
+<script>
+  const grid = [{block: 'one'},{block: 'two'},{block: 'three'},{block: 'four'},{block: 'five'},{block: 'six'},{block: 'seven'},{block: 'eight'},{block: 'nine'},{block: 'ten'}];
+
+  const blockss = document.querySelector('#blocks')
+
+  const html = (grid)=>{
+       return grid.map(tile =>
+         `<div class='peices'>${tile.aBlock ? ' isChosen':''}</div>`
+       ).join('');
+     }
+
+     const render=()=>{
+       blockss.innerHTML = html(grid);
+     }
+  render();
+</script>
+</html>
