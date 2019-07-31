@@ -1,35 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
   <head>
-    <!-- <link href='./style.css' rel='stylesheet' /> -->
-    <style>
-    .peices{
-      width: 1rem;
-      height: 1rem;
-      border: solid 1px black;
-    }
-    </style>
+    <link rel='stylesheet' href='style.css' />
   </head>
   <body>
-    <div id='blocks'>
-    </div>
-    <!-- <link href='./stript.js' rel='stylesheet' /> -->
-
+      <div id='container'>
+        <h1>The Acme Grid Maker</h1>
+          <form>
+            <input value='8' name='rows'/>
+              <div class='error' id='rowsError'></div>
+            <input value='8' name='columns'/>
+              <div class='error' id='columnsError'></div>
+            <button>Make Grid</button>
+          </form>
+        <div id='grid'></div>
+        <div id='message'></div>
+      </div>
+    <script src='script.js'></script>
   </body>
-<script>
-  const grid = [{block: 'one'},{block: 'two'},{block: 'three'},{block: 'four'},{block: 'five'},{block: 'six'},{block: 'seven'},{block: 'eight'},{block: 'nine'},{block: 'ten'}];
-
-  const blockss = document.querySelector('#blocks')
-
-  const html = (grid)=>{
-       return grid.map(tile =>
-         `<div class='peices'>${tile.aBlock ? ' isChosen':''}</div>`
-       ).join('');
-     }
-
-     const render=()=>{
-       blockss.innerHTML = html(grid);
-     }
-  render();
-</script>
 </html>
